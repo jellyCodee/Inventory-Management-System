@@ -67,7 +67,9 @@ namespace InventorySystem.src.pages
 
         private void loginBackButton_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            WelcomeForm welcome = new WelcomeForm();
+            welcome.ShowDialog();
+            this.Hide();
         }
 
         private void checkPassword_CheckedChanged(object sender, EventArgs e)

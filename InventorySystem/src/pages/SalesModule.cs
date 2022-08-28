@@ -121,8 +121,18 @@ namespace InventorySystem.src.pages
                     session.Open();
                     cmd.ExecuteNonQuery();
                     session.Close();
-                    clearFields();
-                    LoadProducts();
+                    
+
+                    SalesInvoice invoice = new SalesInvoice();
+                    invoice.custID.Text = customerID.Text;
+                    invoice.custName.Text = customerName.Text;
+                    invoice.prodID.Text = productIDText.Text;
+                    invoice.prodName.Text = productNameText.Text;
+                    invoice.date.Text = salesDTP.Value.ToString();
+                    invoice.price.Text = productPriceText.Text;
+                    invoice.qty.Text = qtyUpDown.Value.ToString();
+                    invoice.total.Text = productTotalText.Text;
+                    invoice.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -130,6 +140,7 @@ namespace InventorySystem.src.pages
 
                 MessageBox.Show(ex.Message);
             }
+            LoadProducts();
         }
 
         public void clearFields()
