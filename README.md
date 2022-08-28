@@ -16,7 +16,10 @@ There is a button to switch between showing password and not.
 ### Dashboard
 
 
-The dashboard has a sidebar for navigation and a main panel to display table content. Here are the navigation features;
+The dashboard has a sidebar for navigation and a main panel to display table content.
+![](Screenshot 2022-08-28 101312.png)
+
+Here are the navigation features;
 
 1. `Products`: The products button brings up the products table which displays the products in stock. Products comprise of columns like: `product_id`, `name`, `quantity`,
 `price`, `description` and `category`. A product can be edited or deleted from the stock. There is a `new` button to add new products to the stock.
