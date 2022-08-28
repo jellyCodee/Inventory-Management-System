@@ -3,7 +3,7 @@
 
 A windows application inventory management system built in C#. The aplication comes with features typical of a sales inventory system running on an SQL database.
 
-Link to Youtube video: https://youtu.be/lvhCpu3wmyQ
+Link to Youtube video: https://youtu.be/lXAy1d6eKb8
 
 Below are the features the application comes with;
 
