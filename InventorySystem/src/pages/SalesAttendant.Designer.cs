@@ -1,7 +1,7 @@
 ﻿
 namespace InventorySystem.src.pages
 {
-    partial class Sales
+    partial class SalesAttendant
     {
         /// <summary>
         /// Required designer variable.
@@ -39,17 +39,16 @@ namespace InventorySystem.src.pages
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.del = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.newSales = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.totalAmount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.salesCount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.search = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.del = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dvgSales)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -133,8 +132,8 @@ namespace InventorySystem.src.pages
             this.dvgSales.StateNormal.HeaderRow.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.dvgSales.StateNormal.HeaderRow.Content.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.dvgSales.StateNormal.HeaderRow.Content.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.dvgSales.TabIndex = 26;
-            this.dvgSales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgSales_CellContentClick);
+            this.dvgSales.TabIndex = 28;
+            this.dvgSales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgSales_CellContentClick_1);
             // 
             // salesId
             // 
@@ -181,8 +180,24 @@ namespace InventorySystem.src.pages
             this.total.HeaderText = "Total";
             this.total.Name = "total";
             // 
+            // edit
+            // 
+            this.edit.HeaderText = "";
+            this.edit.Image = global::InventorySystem.Resources.edit_free_icon_font;
+            this.edit.Name = "edit";
+            this.edit.Width = 30;
+            // 
+            // del
+            // 
+            this.del.HeaderText = "";
+            this.del.Image = global::InventorySystem.Resources.close;
+            this.del.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.del.Name = "del";
+            this.del.Width = 30;
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.newSales);
             this.panel1.Controls.Add(this.totalAmount);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.salesCount);
@@ -193,7 +208,77 @@ namespace InventorySystem.src.pages
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(721, 62);
-            this.panel1.TabIndex = 25;
+            this.panel1.TabIndex = 27;
+            // 
+            // newSales
+            // 
+            this.newSales.Location = new System.Drawing.Point(25, 12);
+            this.newSales.Name = "newSales";
+            this.newSales.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.newSales.OverrideDefault.Border.Rounding = 5;
+            this.newSales.OverrideDefault.Border.Width = 1;
+            this.newSales.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.newSales.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.newSales.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSales.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.newSales.Size = new System.Drawing.Size(74, 30);
+            this.newSales.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(61)))), ((int)(((byte)(86)))));
+            this.newSales.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(61)))), ((int)(((byte)(86)))));
+            this.newSales.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.newSales.StateCommon.Border.Rounding = 5;
+            this.newSales.StateCommon.Border.Width = 1;
+            this.newSales.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSales.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateDisabled.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.newSales.StateDisabled.Border.Rounding = 5;
+            this.newSales.StateDisabled.Border.Width = 1;
+            this.newSales.StateDisabled.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.newSales.StateDisabled.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.newSales.StateDisabled.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSales.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.newSales.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.newSales.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.newSales.StatePressed.Border.Rounding = 5;
+            this.newSales.StatePressed.Border.Width = 1;
+            this.newSales.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSales.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.newSales.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.newSales.StateTracking.Border.Rounding = 5;
+            this.newSales.StateTracking.Border.Width = 1;
+            this.newSales.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.newSales.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.newSales.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSales.TabIndex = 27;
+            this.newSales.Values.Text = "new";
+            this.newSales.Click += new System.EventHandler(this.newSales_Click_1);
             // 
             // totalAmount
             // 
@@ -283,7 +368,7 @@ namespace InventorySystem.src.pages
             this.search.StateNormal.Content.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.StateNormal.Content.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
             this.search.TabIndex = 21;
-            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged_1);
             // 
             // label3
             // 
@@ -296,38 +381,7 @@ namespace InventorySystem.src.pages
             this.label3.TabIndex = 22;
             this.label3.Text = "Search";
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::InventorySystem.Resources.close;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 30;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::InventorySystem.Resources.close;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 30;
-            // 
-            // edit
-            // 
-            this.edit.HeaderText = "";
-            this.edit.Image = global::InventorySystem.Resources.edit_free_icon_font;
-            this.edit.Name = "edit";
-            this.edit.Width = 30;
-            // 
-            // del
-            // 
-            this.del.HeaderText = "";
-            this.del.Image = global::InventorySystem.Resources.close;
-            this.del.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.del.Name = "del";
-            this.del.Width = 30;
-            // 
-            // Sales
+            // SalesAttendant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,10 +390,9 @@ namespace InventorySystem.src.pages
             this.Controls.Add(this.dvgSales);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Sales";
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-            this.Text = "Sales";
+            this.Name = "SalesAttendant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "SalesAttendant";
             ((System.ComponentModel.ISupportInitialize)(this.dvgSales)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -350,14 +403,6 @@ namespace InventorySystem.src.pages
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dvgSales;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label salesCount;
-        private System.Windows.Forms.Label label1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox search;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label totalAmount;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn salesId;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn productId;
@@ -369,6 +414,13 @@ namespace InventorySystem.src.pages
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn del;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Panel panel1;
+        public ComponentFactory.Krypton.Toolkit.KryptonButton newSales;
+        private System.Windows.Forms.Label totalAmount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label salesCount;
+        private System.Windows.Forms.Label label1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox search;
+        private System.Windows.Forms.Label label3;
     }
 }

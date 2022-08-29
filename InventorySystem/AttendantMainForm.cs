@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,17 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
 
 namespace InventorySystem
 {
-    public partial class AdminMainForm : KryptonForm
+    public partial class AttendantMainForm : KryptonForm
     {
-        public AdminMainForm()
+        public AttendantMainForm()
         {
             InitializeComponent();
-            openChildForm(new src.pages.Sales());
+            openChildForm(new src.pages.SalesAttendant());
         }
+
 
         // open subform
         private KryptonForm activeForm = null;
@@ -37,7 +38,7 @@ namespace InventorySystem
             childForm.Show();
         }
 
-        private void pictureBoxClose_Click(object sender, EventArgs e)
+        private void pictureBoxClose_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Close Application", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -45,57 +46,52 @@ namespace InventorySystem
             }
         }
 
-        private void pictureBoxMinimize_Click(object sender, EventArgs e)
+        private void pictureBoxMinimize_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void pictureBoxNormal_Click(object sender, EventArgs e)
+        private void pictureBoxNormal_Click_1(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
-            } else if (this.WindowState == FormWindowState.Maximized)
+            }
+            else if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
             }
-            
         }
 
-        private void sidebarUsers_Click(object sender, EventArgs e)
+
+        private void attendantSidebarSales_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new src.pages.Users());
+            openChildForm(new src.pages.SalesAttendant());
         }
 
-        private void sidebarProducts_Click(object sender, EventArgs e)
-        {
-            openChildForm(new src.pages.Products());
-        }
-
-        private void sidebarCat_Click(object sender, EventArgs e)
-        {
-            openChildForm(new src.pages.Categories());
-        }
-
-        private void sidebarCustomer_Click(object sender, EventArgs e)
+        private void attendantSidebarCustomer_Click_1(object sender, EventArgs e)
         {
             openChildForm(new src.pages.Customer());
         }
 
-        private void sidebarSales_Click(object sender, EventArgs e)
+        private void attendantSidebarCat_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new src.pages.Sales());
-
+            openChildForm(new src.pages.Categories());
         }
 
-        private void sidebarLogout_Click(object sender, EventArgs e)
+        private void attendantSidebarProducts_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new src.pages.Products());
+        }
+
+        private void attendantSidebarLogout_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Confirm logging out of the system?", "Logging out", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 src.pages.LoginForm login = new src.pages.LoginForm();
                 this.Hide();
                 login.ShowDialog();
-                
+
             }
         }
     }

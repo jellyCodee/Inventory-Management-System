@@ -31,12 +31,13 @@ namespace InventorySystem.src.pages
             {
                 if(MessageBox.Show("Confirm adding new user", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cmd = new SqlCommand("INSERT INTO tbUser(username, fullname, email, password, phone)VALUES(@username, @fullname, @email, @password, @phone)", session);
+                    cmd = new SqlCommand("INSERT INTO tbUser(username, fullname, email, password, phone, is_superuser)VALUES(@username, @fullname, @email, @password, @phone, @is_superuser)", session);
                     cmd.Parameters.AddWithValue("@username", username.Text);
                     cmd.Parameters.AddWithValue("@fullname", fullname.Text);
                     cmd.Parameters.AddWithValue("@email", email.Text);
                     cmd.Parameters.AddWithValue("@password", password.Text);
                     cmd.Parameters.AddWithValue("@phone", phone.Text);
+                    cmd.Parameters.AddWithValue("@is_superuser", 0);
                     session.Open();
                     cmd.ExecuteNonQuery();
                     session.Close();
