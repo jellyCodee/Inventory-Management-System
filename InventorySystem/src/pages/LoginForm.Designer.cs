@@ -381,12 +381,12 @@ namespace InventorySystem.src.pages
         private ComponentFactory.Krypton.Toolkit.KryptonButton loginBackButton;
         private ComponentFactory.Krypton.Toolkit.KryptonCheckBox checkPassword;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox loginPassword;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox loginUsername;
         private System.Windows.Forms.Label label2;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBoxClose;
+        public ComponentFactory.Krypton.Toolkit.KryptonTextBox loginUsername;
     }
 }

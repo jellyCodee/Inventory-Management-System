@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,17 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
 
 namespace InventorySystem.src.pages
 {
-    public partial class Sales : KryptonForm
+    public partial class SalesAttendant : KryptonForm
     {
         SqlConnection session = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\malon\source\repos\InventorySystem\InventorySystem\maindb.mdf;Integrated Security=True;Connect Timeout=30");
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
-        public bool isAdmin;
-        public Sales()
+        public SalesAttendant()
         {
             InitializeComponent();
             LoadSales();
@@ -45,8 +44,14 @@ namespace InventorySystem.src.pages
             totalAmount.Text = total.ToString();
         }
 
+        private void newSales_Click_1(object sender, EventArgs e)
+        {
+                SalesModule sales = new SalesModule();
+                sales.ShowDialog();
+                LoadSales();
+        }
 
-        private void dvgSales_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dvgSales_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             String colName = dvgSales.Columns[e.ColumnIndex].Name;
             if (colName == "del")
@@ -70,7 +75,7 @@ namespace InventorySystem.src.pages
             LoadSales();
         }
 
-        private void search_TextChanged(object sender, EventArgs e)
+        private void search_TextChanged_1(object sender, EventArgs e)
         {
             LoadSales();
         }

@@ -25,20 +25,13 @@ namespace InventorySystem
                 Application.Exit();
             }
         }
+   
 
-        private void adminButton_Click(object sender, EventArgs e)
+        private void enterButton_Click(object sender, EventArgs e)
         {
             src.pages.LoginForm login = new src.pages.LoginForm();
             this.Hide();
             login.ShowDialog();
         }
-
-        private void attendantButton_Click(object sender, EventArgs e)
-        {
-            src.pages.LoginForm login = new src.pages.LoginForm();
-            this.Hide();
-            login.ShowDialog();
-        }
-
     }
 }

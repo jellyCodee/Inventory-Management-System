@@ -17,6 +17,7 @@ namespace InventorySystem.src.pages
         SqlConnection session = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\malon\source\repos\InventorySystem\InventorySystem\maindb.mdf;Integrated Security=True;Connect Timeout=30");
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace InventorySystem.src.pages
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void clearForm()
@@ -45,12 +45,23 @@ namespace InventorySystem.src.pages
                 session.Open();
                 dr = cmd.ExecuteReader();
                 dr.Read();
+
                 if (dr.HasRows)
                 {
-                    MessageBox.Show("Welcome " + dr["fullname"].ToString() + " ", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    AdminMainForm main = new AdminMainForm();
-                    this.Hide();
-                    main.ShowDialog();
+                    if (loginUsername.Text == "admin")
+                    {
+                        MessageBox.Show("Welcome " + dr["fullname"].ToString() + " ", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        AdminMainForm main = new AdminMainForm();
+                        this.Hide();
+                        main.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Welcome " + dr["fullname"].ToString() + " ", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        AttendantMainForm attendant = new AttendantMainForm();
+                        this.Hide();
+                        attendant.ShowDialog();
+                    }
                 }
                 else
                 {

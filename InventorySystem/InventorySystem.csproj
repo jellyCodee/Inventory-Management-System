@@ -90,6 +90,12 @@
     <Compile Include="AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AttendantMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendantMainForm.Designer.cs">
+      <DependentUpon>AttendantMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="maindbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +155,12 @@
     <Compile Include="src\pages\Sales.Designer.cs">
       <DependentUpon>Sales.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\pages\SalesAttendant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\pages\SalesAttendant.Designer.cs">
+      <DependentUpon>SalesAttendant.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\pages\SalesInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +195,9 @@
     <EmbeddedResource Include="AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AttendantMainForm.resx">
+      <DependentUpon>AttendantMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\pages\Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\pages\Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\pages\SalesAttendant.resx">
+      <DependentUpon>SalesAttendant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\pages\SalesInvoice.resx">
       <DependentUpon>SalesInvoice.cs</DependentUpon>
